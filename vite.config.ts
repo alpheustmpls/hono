@@ -3,6 +3,7 @@ import type { ConfigEnv, UserConfig } from "vite";
 import build from "@hono/vite-build/node";
 import devServer from "@hono/vite-dev-server";
 import adapter from "@hono/vite-dev-server/node";
+import copy from "rollup-plugin-copy";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
@@ -34,6 +35,15 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
                 outputDir: "./dist",
                 minify: false,
                 emptyOutDir: true,
+            }),
+            copy({
+                hook: "closeBundle",
+                targets: [
+                    {
+                        src: "./public/**/*",
+                        dest: "./dist/public",
+                    },
+                ],
             }),
         ],
     };
