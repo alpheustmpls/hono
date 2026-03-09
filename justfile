@@ -23,14 +23,26 @@ up:
 fmt:
     ./{{biome}} check --write .
 
+# Lint code with ls-lint
+ls-lint:
+    ls-lint
+
+# Lint code with ls-lint
+lslint:
+    just ls-lint
+
+# Lint code with typos-cli
+typos:
+    typos
+
 # Lint code with TypeScript Compiler
 tsc:
     ./{{tsc}} --noEmit
 
 # Lint code
 lint:
-    ls-lint
-    typos
+    just lslint
+    just typos
     just tsc
 
 # Start development server
