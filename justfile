@@ -57,11 +57,38 @@ build:
 start:
     node ./dist/index.js
 
-# Clean builds
-clean:
+# Clean builds (Linux)
+clean-linux:
     rm -rf ./dist
+
+# Clean builds (macOS)
+clean-macos:
+    just clean-linux
+
+# Clean builds (Windows)
+clean-windows:
+    Remove-Item -Recurse -Force ./dist
+
+# Clean
+clean:
+    just clean-{{os()}}
+
+# Clean everything (Linux)
+clean-all-linux:
+    just clean
+
+    rm -rf ./node_modules
+
+# Clean everything (macOS)
+clean-all-macos:
+    just clean-all-linux
+
+# Clean everything (Windows)
+clean-all-windows:
+    just clean
+
+    Remove-Item -Recurse -Force ./node_modules
 
 # Clean everything
 clean-all:
-    just clean
-    rm -rf ./node_modules
+    just clean-all-{{os()}}
