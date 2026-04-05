@@ -1,10 +1,9 @@
 set shell := ["bash", "-cu"]
 set windows-shell := ["powershell"]
 
-node_bin := "node_modules/.bin/"
-tsc := node_bin + "tsc"
-biome := node_bin + "biome"
-vite := node_bin + "vite"
+tsc := "pnpm exec tsc"
+biome := "pnpm exec biome"
+vite := "pnpm exec vite"
 
 # Default action
 _:
@@ -20,7 +19,7 @@ up:
 
 # Format code
 fmt:
-    ./{{biome}} check --write .
+    {{biome}} check --write .
 
 # Lint code with ls-lint
 ls-lint:
@@ -36,7 +35,7 @@ typos:
 
 # Lint code with TypeScript Compiler
 tsc:
-    ./{{tsc}} --noEmit
+    {{tsc}} --noEmit
 
 # Lint code
 lint:
@@ -51,11 +50,11 @@ check:
 
 # Start development server
 dev:
-    ./{{vite}}
+    {{vite}} dev
 
 # Build for production
 build:
-    ./{{vite}} build
+    {{vite}} build
 
 # Production preview
 start:
