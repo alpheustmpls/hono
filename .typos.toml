@@ -4,6 +4,8 @@ extend-exclude = [
     ".github/",
     "__MACOSX/",
     ".DS_Store",
+    ".agents/",
+    ".vscode/",
     "node_modules/",
     "dist/",
     "*.log",

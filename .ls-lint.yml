@@ -10,6 +10,8 @@ ignore:
     - "**/__MACOSX"
     - .DS_Store
     - "**/.DS_Store"
+    - .agents
+    - .vscode
     - node_modules
     - "**/node_modules"
     - dist

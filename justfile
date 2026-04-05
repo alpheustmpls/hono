@@ -8,8 +8,7 @@ vite := node_bin + "vite"
 
 # Default action
 _:
-    just fmt
-    just lint
+    just --list -u
 
 # Install
 i:
@@ -44,6 +43,11 @@ lint:
     just lslint
     just typos
     just tsc
+
+# Check code
+check:
+    just fmt
+    just lint
 
 # Start development server
 dev:
