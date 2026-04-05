@@ -4,7 +4,7 @@ import { z } from "zod";
  * Default dataless JSON response schema.
  */
 const jsonResponseSchema = z.object({
-    success: z.boolean(),
+    success: z.literal(true),
     data: z.null(),
     errors: z.array(z.never()),
 });
