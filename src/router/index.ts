@@ -19,7 +19,7 @@ router.get(
     "/",
     describeRoute({
         description: "Index page of the API",
-        operationId: "getIndex",
+        operationId: "get_index",
         responses: {
             200: {
                 description: "Successful response",

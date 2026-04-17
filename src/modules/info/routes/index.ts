@@ -14,7 +14,7 @@ router.get(
     "/",
     describeRoute({
         description: "The endpoint for retrieving API information",
-        operationId: "getInfo",
+        operationId: "get_info",
         responses: {
             200: {
                 description: "Successful response",
