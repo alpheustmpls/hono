@@ -23,7 +23,7 @@ fmt:
 
 # Lint code with ls-lint
 ls-lint:
-    ls-lint
+    cd ./src && ls-lint -config ../.ls-lint.yaml
 
 # Lint code with ls-lint
 lslint:
