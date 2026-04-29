@@ -48,8 +48,18 @@ check:
     just fmt
     just lint
 
-# Start development server
+# Start development server in https
+[env("DEV_HTTPS", "1")]
+https:
+    {{vite}} dev
+
+# Start development server in https
 dev:
+    just https
+
+# Start development server in http
+[env("DEV_HTTPS", "0")]
+http:
     {{vite}} dev
 
 # Build for production
