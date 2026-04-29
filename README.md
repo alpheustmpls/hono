@@ -34,12 +34,12 @@ This command will upgrade Node.js dependencies.
 just up
 ```
 
-### Default Command
+### Formatting
 
-This command will do formatting and linting.
+This command will format the code.
 
 ```sh
-just
+just fmt
 ```
 
 ### Linting
@@ -50,20 +50,28 @@ This command will lint the code.
 just lint
 ```
 
-### Formatting
+### Checking
 
-This command will format the code.
+This command will do formatting and linting.
 
 ```sh
-just fmt
+just check
 ```
 
-### Development
+### Development (HTTPS)
 
-This command will start the development server.
+This command will start the development server in HTTPS mode.
 
 ```sh
 just dev
+```
+
+### Development (HTTP)
+
+This command will start the development server in HTTP mode.
+
+```sh
+just http
 ```
 
 ### Production
@@ -73,4 +81,18 @@ This command will build the code and start the production server.
 ```sh
 just build
 just start
+```
+
+### Cleaning
+
+This command will clean the unnecessary files.
+
+```sh
+just clean
+```
+
+This command will clean all unnecessary files including the `node_modules` directory.
+
+```sh
+just clean-all
 ```
