@@ -1,3 +1,5 @@
+import type { Format, Partial } from "ts-vista";
+
 import { z } from "zod";
 
 /**
@@ -21,12 +23,48 @@ const createJsonSuccessResponseSchema = (data: z.ZodType) => {
 };
 
 /**
- * Function to create a JSON error response schema with specified code and message types.
+ * Options for creating a JSON response error schema.
  */
-const createJsonResponseErrorSchema = (code: z.ZodType, message: z.ZodType) => {
+type CompleteCreateJsonResponseErrorSchemaOptions = {
+    /**
+     * Type for error code.
+     *
+     * By default, it is `z.string()`.
+     */
+    code: z.ZodType;
+    /**
+     * Type for error path.
+     *
+     * By default, it is `z.array(z.never())`.
+     */
+    path: z.ZodType;
+    /**
+     * Type for error message.
+     *
+     * By default, it is `z.never()`.
+     */
+    message: z.ZodType;
+};
+
+/**
+ * Options for creating a JSON response error schema.
+ */
+type CreateJsonResponseErrorSchemaOptions = Format<
+    Partial<CompleteCreateJsonResponseErrorSchemaOptions>
+>;
+
+/**
+ * Function to create a JSON response error schema
+ * with specified code, path and message types.
+ */
+const createJsonResponseErrorSchema = ({
+    code = z.string(),
+    path = z.array(z.never()),
+    message = z.never(),
+}: CreateJsonResponseErrorSchemaOptions) => {
     return z.object({
         code,
-        path: z.array(z.string()),
+        path,
         message,
     });
 };
@@ -42,6 +80,7 @@ const createJsonFailureResponseSchema = (error: z.ZodType) => {
     });
 };
 
+export type { CreateJsonResponseErrorSchemaOptions };
 export {
     createJsonFailureResponseSchema,
     createJsonResponseErrorSchema,
