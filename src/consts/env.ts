@@ -11,6 +11,6 @@ const IS_PRD: boolean = import.meta.env.PROD;
 /**
  * The version of the application.
  */
-const VERSION: string = import.meta.env.VITE_VERSION ?? "0.0.0";
+const VERSION: string = import.meta.env.VITE_VERSION || "0.0.0";
 
 export { IS_DEV, IS_PRD, VERSION };
