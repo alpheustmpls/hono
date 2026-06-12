@@ -6,23 +6,23 @@
         "start": "node ./dist/index.js"
     },
     "dependencies": {
-        "@hono/node-server": "^2.0.2",
+        "@hono/node-server": "^2.0.4",
         "@jderstd/hono": "~0.8.2",
         "@jderstd/hono-openapi": "~0.2.0",
-        "@scalar/hono-api-reference": "~0.10.14",
-        "hono": "^4.12.18",
+        "@scalar/hono-api-reference": "~0.11.2",
+        "@srvkit/vite": "~0.1.1",
+        "hono": "^4.12.25",
         "ts-vista": "~0.2.3",
-        "vitend": "~0.3.0",
         "zod": "^4.4.3"
     },
     "devDependencies": {
         "@apst/biome": "~0.3.1",
         "@apst/tsconfig": "~0.3.0",
-        "@biomejs/biome": "^2.4.15",
-        "@types/node": "^25.7.0",
+        "@biomejs/biome": "^2.4.16",
+        "@types/node": "^25.9.3",
         "typescript": "^6.0.3",
-        "vite": "^8.0.13",
-        "vite-plugin-mkcert": "^2.0.0",
+        "vite": "^8.0.16",
+        "vite-plugin-mkcert": "^2.1.0",
         "vite-tsconfig-paths": "^6.1.1"
     }
 }

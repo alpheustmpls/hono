@@ -1,9 +1,9 @@
 import * as Path from "node:path";
 
+import { srvkit } from "@srvkit/vite/plugin";
 import { defineConfig } from "vite";
 import mkcert from "vite-plugin-mkcert";
 import tsconfigPaths from "vite-tsconfig-paths";
-import { vitend } from "vitend/vite";
 
 export default defineConfig({
     plugins: [
@@ -12,6 +12,6 @@ export default defineConfig({
                 savePath: Path.resolve(process.cwd(), "node_modules", ".cert"),
             }),
         tsconfigPaths(),
-        vitend(),
+        srvkit(),
     ],
 });

@@ -4,9 +4,7 @@ strictPeerDependencies: false
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
-    - "@apst/biome"
-    - "@apst/tsconfig"
-    - "@jderstd/hono"
-    - "@jderstd/hono-openapi"
+    - "@apst/*"
+    - "@srvkit/*"
+    - "@jderstd/*"
     - "ts-vista"
-    - "vitend"
