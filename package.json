@@ -6,19 +6,19 @@
         "start": "node ./dist/index.js"
     },
     "dependencies": {
-        "@hono/node-server": "^2.0.4",
+        "@hono/node-server": "^2.0.5",
         "@jderstd/hono": "~0.8.2",
         "@jderstd/hono-openapi": "~0.2.0",
-        "@scalar/hono-api-reference": "~0.11.2",
-        "@srvkit/vite": "~0.1.1",
+        "@scalar/hono-api-reference": "~0.11.3",
+        "@srvkit/vite": "~0.2.0",
         "hono": "^4.12.25",
         "ts-vista": "~0.2.3",
         "zod": "^4.4.3"
     },
     "devDependencies": {
-        "@apst/biome": "~0.3.1",
+        "@apst/biome": "~0.3.2",
         "@apst/tsconfig": "~0.3.0",
-        "@biomejs/biome": "^2.4.16",
+        "@biomejs/biome": "^2.5.0",
         "@types/node": "^25.9.3",
         "typescript": "^6.0.3",
         "vite": "^8.0.16",
