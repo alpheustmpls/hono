@@ -7,4 +7,5 @@ minimumReleaseAgeExclude:
     - "@apst/*"
     - "@srvkit/*"
     - "@jderstd/*"
+    - "envow"
     - "ts-vista"

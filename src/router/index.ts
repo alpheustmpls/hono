@@ -7,7 +7,7 @@ import {
 import { Scalar } from "@scalar/hono-api-reference";
 import { Hono } from "hono";
 
-import { VERSION } from "#/consts/env";
+import { env } from "#/configs/env";
 import { jsonResponseSchema } from "#/lib/schemas/response";
 import { routerInfo } from "#/modules/info/routes";
 
@@ -44,7 +44,7 @@ router.get(
         documentation: {
             info: {
                 title: "API",
-                version: VERSION,
+                version: env.VITE_VERSION,
                 description: "Documentation for the API",
             },
         },

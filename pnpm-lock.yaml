@@ -23,6 +23,9 @@ importers:
       '@srvkit/vite':
         specifier: ~0.2.0
         version: 0.2.0(@types/node@25.9.3)(rolldown@1.0.3)(vite@8.0.16(@types/node@25.9.3))
+      envow:
+        specifier: ~0.1.0
+        version: 0.1.0(@standard-schema/spec@1.1.0)(zod@4.4.3)
       hono:
         specifier: ^4.12.25
         version: 4.12.25
@@ -420,6 +423,23 @@ packages:
 
   envkist@0.2.0:
     resolution: {integrity: sha512-egTq/7wNA7O0W/AvEpLyB0CvLHC3ZQK5ePDTFvpd+uehhG2RubeVxUOrbZK50/d096wjzYMxF9iXF4vC//4QUg==}
+
+  envow@0.1.0:
+    resolution: {integrity: sha512-0aKf2kG5343oSvimTyf+5kqDi+jOciJA7De3u0VR1aUjz8aaGRcDPgTzDFRpxNo5TwFcGm7nXl8zqIoBXkA0Kw==}
+    peerDependencies:
+      '@standard-schema/spec': ^1.1.0
+      arktype: ^2.2.0
+      valibot: ^1.4.0
+      zod: ^4.4.0
+    peerDependenciesMeta:
+      '@standard-schema/spec':
+        optional: true
+      arktype:
+        optional: true
+      valibot:
+        optional: true
+      zod:
+        optional: true
 
   es-toolkit@1.47.1:
     resolution: {integrity: sha512-5RAqEwf4P4E17p+W75KLOWw/nOvKZzSQpxM32IpI2KZLaVonjTrZ0Ai5ghMaVI9eKC2p8eoQgcBdkEDgzFk6+Q==}
@@ -945,6 +965,13 @@ snapshots:
   detect-libc@2.1.2: {}
 
   envkist@0.2.0: {}
+
+  envow@0.1.0(@standard-schema/spec@1.1.0)(zod@4.4.3):
+    dependencies:
+      ts-vista: 0.2.3
+    optionalDependencies:
+      '@standard-schema/spec': 1.1.0
+      zod: 4.4.3
 
   es-toolkit@1.47.1: {}
 
