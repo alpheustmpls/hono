@@ -26,8 +26,7 @@ ls-lint:
     cd ./src && ls-lint -config ../.ls-lint.yaml
 
 # Lint code with ls-lint
-lslint:
-    just ls-lint
+lslint: ls-lint
 
 # Lint code with typos-cli
 typos:
@@ -38,15 +37,10 @@ tsc:
     {{tsc}} --noEmit
 
 # Lint code
-lint:
-    just lslint
-    just typos
-    just tsc
+lint: lslint typos tsc
 
 # Check code
-check:
-    just fmt
-    just lint
+check: fmt lint
 
 # Start development server in https
 [env("DEV_HTTPS", "1")]
@@ -54,8 +48,7 @@ https:
     {{vite}} dev
 
 # Start development server in https
-dev:
-    just https
+dev: https
 
 # Start development server in http
 [env("DEV_HTTPS", "0")]
@@ -75,8 +68,7 @@ clean-linux:
     rm -rf ./dist
 
 # Clean builds (macOS)
-clean-macos:
-    just clean-linux
+clean-macos: clean-linux
 
 # Clean builds (Windows)
 clean-windows:
@@ -93,8 +85,7 @@ clean-all-linux:
     rm -rf ./node_modules
 
 # Clean everything (macOS)
-clean-all-macos:
-    just clean-all-linux
+clean-all-macos: clean-all-linux
 
 # Clean everything (Windows)
 clean-all-windows:
